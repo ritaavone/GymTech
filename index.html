@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  <!--assicura l'ultima versione di Internet Explorer-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Configura il viewport per il design responsivo-->
+    <title>Progetto Palestra</title> <!--Specifica il titolo della pagina web.-->
+
+    <!--In sintesi, questi link consentono di incorporare stili predefiniti da Swiper, stili personalizzati dal tuo file "style.css",
+        e icone da Font Awesome nel tuo sito web.-->
+
+    <!-- swiper CSS cdn link  -->
+    <!--Questo link importa il foglio di stile CSS del framework Swiper da un Content Delivery Network (CDN). 
+        Swiper è una libreria JavaScript che fornisce componenti per implementare slider e carousels in modo interattivo.-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    <!-- custom CSS file link  -->
+    <!--Questo link importa un file CSS personalizzato chiamato "style.css" dal tuo progetto. 
+        Questo file contiene regole CSS specifiche che sovrascrivono o estendono gli stili definiti nel file Swiper o in altri fogli di stile.-->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Font awesome cdn link  -->
+    <!--Questo link importa il foglio di stile CSS di Font Awesome, una libreria di icone. Le icone vengono utilizzate per arricchire il design della pagina web. 
+        Il integrity attributo garantisce l'integrità del file CSS, mentre crossorigin gestisce le richieste da origini diverse.-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+    
+    <!-- L'header rappresenta la sezione dell'intestazione della pagina, inclusi un logo, collegamenti di navigazione e pulsanti -->
+
+    <header class="header">
+
+        <a href="#" class="logo">Gym <span>Tech</span></a>
+
+        <nav class="navbar"> <!--Questo è un elemento di navigazione (<nav>) che contiene una lista di collegamenti (<a>) rappresentanti le pagine principali del tuo sito, come "home", "about", "services", "news", e "contact". Questi collegamenti possono essere parte del menu di navigazione del tuo sito.-->
+            <a href="#">home</a>
+            <a href="#about">about</a>
+            <a href="#services">servizi</a>
+            <a href="#contacts">contatti</a>
+        </nav>
+
+
+        <div class="icons"> <!--Questo è un contenitore (<div>) che contiene due elementi:-->
+            <div id="menu-btn" class="fas fa-bars"></div> <!--Un'icona rappresentata con una classe "fas fa-bars". Questa potrebbe essere un'icona del menu a barre, spesso utilizzata per indicare la presenza di un menu a comparsa o di navigazione.-->
+        </div>
+
+
+    </header>
+
+    
+
+    <!-- sezione header finita  -->
+
+    <!-- sezione home iniziata-->
+
+    <section class="home"> <!--Definisce la sezione home, che include uno slider Swiper con immagini e contenuti-->
+
+        <div class="swiper home-slider"> <!-- La classe "home-slider" potrebbe essere utilizzata per applicare stili specifici tramite CSS.-->
+
+            <div class="swiper-wrapper"> <!--Questo è un contenitore che contiene gli slider. La classe "swiper-wrapper" è specifica per Swiper e rappresenta l'area contenente gli slider.
+
+            -->
+
+                <div class="swiper-slide box" style="background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url(images/home-1.jpeg);"> <!--Questo rappresenta uno slide dello Swiper. La classe "swiper-slide" è specifica di Swiper, mentre la classe "box" potrebbe essere utilizzata per applicare stili specifici tramite CSS. Lo stile inline style viene utilizzato per impostare lo sfondo con un gradiente e un'immagine di sfondo.-->
+                    <div class="content"> <!-- Contiene il contenuto testuale dello slide, come il titolo (<h3>)-->
+                        <h3>Unisciti a GymTech</h3>
+                        <div class="button">
+                            <button id="loginBtn" class="btn btn-1" onclick="toggleLoginSection()">Accedi</button> <!--Sono link (pulsanti) con testo "get started" e "download". Le classi "btn" e "btn-1" potrebbero essere utilizzate per applicare stili specifici tramite CSS.-->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="login-section" id="loginSection" style="display: none;">
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Indirizzo email" autocapitalize="none">
+            <input type="password" id="password" placeholder="Password" autocapitalize="none">
+            <button type="button" id="submitLoginBtn" onclick="login()">Accedi</button>
+            <button type="button" id="cancelBtn" onclick="cancelLogin()">Annulla</button>
+        </form>
+    </div>
+    
+    <!-- sezione home finita  -->
+
+    <!-- sezione caratteristiche iniziata  -->
+
+    <section class="feature"> <!-- Rappresenta la lista delle classi di fitness -->
+
+        <h1 class="heading"> Lezioni <span> Offerte </span></h1>
+
+        <div class="swiper feature-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/Feature-classes.jpeg" alt=""> <!--Questo è un contenitore per l'immagine della classe di fitness.-->
+                    </div>
+                    <div class="content"> <!--Questo è un contenitore che include il contenuto testuale della slide.-->
+                        <div class="price">
+                        <div class = "amount" >19.99€</div> <!--Questo mostra il prezzo della classe di fitness.-->
+                        <div class="frequency">al mese</div>
+                    </div>
+                        <h3>Zumba</h3> <!--Questo mostra il nome della classe di fitness.-->
+                        <button class="btn pay-btn" data-corso-id="zumba" data-price="19.99">Paga</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/Feature-classes-2.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                        <div class = "amount">29.99€</div>
+                        <div class="frequency">al mese</div>
+                    </div>
+                        <h3>Yoga</h3>
+                        <button class="btn pay-btn" data-corso-id="yoga" data-price="29.99">Paga</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/Feature-classes-3.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                        <div class = "amount">49.99€</div>
+                        <div class="frequency">al mese</div>
+                    </div>
+                        <h3>Sala Attrezzi</h3>
+                        <button class="btn pay-btn" data-corso-id="sala attrezzi" data-price="49.99">Paga</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/Feature-classes-4.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                        <div class = "amount">39.99€</div>
+                        <div class="frequency">al mese</div>
+                    </div>
+                        <h3>Pilates</h3>
+                        <button class="btn pay-btn" data-corso-id="pilates" data-price="39.99">Paga</button>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/Feature-classes-5.jpeg" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="price">
+                        <div class = "amount">59.99€</div>
+                        <div class="frequency">al mese</div>
+                    </div>
+                        <h3>Cross fit</h3>
+                        <button class="btn pay-btn" data-corso-id="cross fit" data-price="59.99">Paga</button>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+
+    </section>
+
+    <div class="lesson-section" id="lessonSection" style="display: none;">
+        <form id="lessonForm">
+            <input type="text" id="lessonName" placeholder="Nome lezione">
+            <input type="text" id="lessonCost" placeholder="Costo lezione">
+            <button type="button" id="submitLessonBtn" onclick="prenotaLesson()">Prenota</button>
+            <button type="button" id="cancelLessonBtn" onclick="cancelLesson()">Annulla</button>
+        </form>
+    </div>
+
+    <div class="contact-info">
+        <p>Per info e prenotazioni delle lezioni offerte, contattare la struttura tramite:</p>
+        <p>Email: <a href="mailto:indirizzo@email.com">gymtech@gmail.com</a></p>
+        <p>Telefono: <a href="tel:+123456789">+39 338 5942 290</a></p>
+    </div>
+
+    <!-- sezione caratteristiche finita  -->
+
+    <!-- Schedule section starts  -->
+
+    <section class="schedule"> <!--Mostra l'orario con i dettagli delle lezioni di fitness.-->
+
+        <section id="services">
+        <h1 class="heading"><span>Lezioni</span> disponibili</h1> <!--Questo è il titolo della sezione "schedule". La classe "heading" potrebbe essere utilizzata per applicare stili specifici tramite CSS. La parola "our" è racchiusa in uno <span>, che potrebbe essere utilizzato per applicare stili aggiuntivi.-->
+        <div class="box-container"> <!--Questo è un contenitore che include diverse "box", ognuna delle quali rappresenta una lezione di fitness o contiene un'immagine.-->
+
+
+            <div class="box">
+                <img src="images/pic-1.jpg" alt=""> <!--Questa "box" contiene semplicemente un'immagine (pic-1.jpeg).-->
+            </div>
+
+            <div class="box"> <!--Questa è una "box" che rappresenta una lezione di fitness. Contiene il nome della lezione, una breve descrizione, l'orario, la data e un pulsante per unirsi alla lezione.-->
+                <div class="content">
+                    <h3>Zumba</h3>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 17:30 - 18:30</span>
+                    <span><i class="fad fa-calendar-alt"></i>Lunedi/Mercoledi</span>
+                </div>
+                <button class="btn prenota-btn" data-corso-id="Zumba" onclick="makeReservation('Zumba')">Prenota</button>
+                <button class="btn cancella-btn" data-corso-id="Zumba" onclick="cancelReservation('Zumba')">Annulla Prenotazione</button>
+            </div>
+
+            <div class="box">
+                <img src="images/pic-2.jpg" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Yoga</h3>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 08:30 - 09:15</span>
+                    <span><i class="fad fa-calendar-alt"></i>Lunedi/Mercoledi/Venerdi</span>
+                </div>
+                <button class="btn prenota-btn" data-corso-id="Yoga" onclick="makeReservation('Yoga')">Prenota</button>
+                <button class="btn cancella-btn" data-corso-id="Yoga" onclick="cancelReservation('Yoga')">Annulla Prenotazione</button>
+            </div>
+
+            <div class="box">
+                <img src="images/pic-3.jpeg" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Sala Attrezzi</h3>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 08:30 - 21:30</span>
+                    <span><i class="fad fa-calendar-alt"></i>Dal lunedi al venerdi</span>
+                </div>
+                <button class="btn prenota-btn" data-corso-id="Sala Attrezzi" onclick="makeReservation('Sala Attrezzi')">Prenota</button>
+                <button class="btn cancella-btn" data-corso-id="Sala Attrezzi" onclick="cancelReservation('Sala Attrezzi')">Annulla Prenotazione</button>
+            </div>
+
+            <div class="box">
+                <img src="images/pic-4.jpeg" alt="">
+            </div>
+
+            <div class="box">
+                <div class="content">
+                    <h3>Pilates</h3>
+                </div>
+                <div class="icons">
+                    <span><i class="far fa-clock"></i> 12:30 - 13:30</span>
+                    <span><i class="fad fa-calendar-alt"></i>Martedi/Giovedi</span>
+                </div>
+                <button class="btn prenota-btn" data-corso-id="Pilates" onclick="makeReservation('Pilates')">Prenota</button>
+                <button class="btn cancella-btn" data-corso-id="Pilates" onclick="cancelReservation('Pilates')">Annulla Prenotazione</button>
+            </div>
+        
+        </div>
+    </section>
+    </section>
+
+    <!-- Schedule section finita-->
+
+    <!-- sezione trainer iniziata  -->
+
+    <section class="trainers"> <!--Introduce una sezione per gli istruttori esperti con le loro immagini e nomi.-->
+
+        <h1 class="heading">Personal <span>Trainer</span></h1>
+
+        <div class="swiper trainer-slider">
+
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/trainer-1.jpeg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Mario Esposito</h1>
+                        <p>gym trainer:</p>
+                        <p> Specializzione in allenamenti fat burn </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/trainer-4.jpeg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Christian Bianco</h1>
+                        <p>gym trainer:</p>
+                        <p> Specializzione in Pilates </p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/trainer.jpeg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Simone Ferrari</h1>
+                        <p>gym trainer:</p>
+                        <p> Specializzazione in pesi massimi</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <div class="image">
+                        <img src="images/trainer-2.jpeg" alt="">
+                    </div>
+                    <div class="name">
+                        <h1>Sofia Russo</h1>
+                        <p>gym trainer:</p>
+                        <p> Specializzazione in Zumba </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- sezione trainer finita  -->
+
+    <!-- sezione testimonial iniziata -->
+
+    <section class="testimonial"> <!--Visualizza testimonianze con immagini, nomi e feedback.-->
+
+        <h1 class="heading">Recensioni</h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/t-2.jpeg" alt="">
+                </div>
+                <div class="name">
+                    <h1>Simone Rossi</h1>
+                </div>
+                <p style="text-transform: none;"> A differenza di altri corsi che ho frequentato, Pilates si è rivelato oltre che una nuova scoperta di fare sport, un corso completo per tutto il corpo. Mi soddisfa, mi diverte e soprattutto mi appassiona lezione dopo lezione. Questo è lo sport che preferisco! Grazie GymTech.”</p>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/t-3.jpeg" alt="">
+                </div>
+                <div class="name">
+                    <h1>Sandra Bianchi</h1>
+                </div>
+
+                <p style = "text-transform: none;" > I corsi di Zumba sono i più divertenti, la struttura è completa e offre molto opportunità di svago e sport.</p>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- sezione testimonial finita  -->
+
+    <!-- sezione footer iniziata  -->
+
+    <section class="footer"> <!--Rappresenta la sezione del piè di pagina con informazioni sull'azienda, dettagli di contatto, link veloci e crediti.-->
+
+        <div class="box-container">
+    <section id="about">
+            <div class="box">
+                <h1 style="text-transform: none;">About</h1> <!--Un titolo di primo livello che indica che questa sezione contiene informazioni sull'azienda.-->
+                <div class="text"> <!-- Contiene un paragrafo (<p>) con testo fittizio "Lorem ipsum..." che potrebbe essere sostituito con una descrizione reale dell'azienda.-->
+                   <p style="text-transform: none;">La nostra palestra è stata pensata per permettere ai membri della palestra di 
+                        prenotare lezioni, corsi e servizi aggiuntivi in modo efficiente e comodo. 
+                        Inoltre, consentirà la conoscenza del personale tramite descrizione dettagliata di ognuno di essi.</p>
+                </div>
+            </div>
+    </section>
+    <section id="contacts">
+            <div class="box">
+                <h1>contact info</h1>
+                <div class="icons"> <!--Contiene icone (<i>) insieme a informazioni di contatto come l'indirizzo, il numero di telefono e l'indirizzo e-mail.-->
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Centro Direzionale Isola C4, 80133, Napoli, Italia </a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Email: <a href="mailto:indirizzo@email.com" style="text-transform: none;">gymtech@gmail.com</a></a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i>Telefono: <a href="tel:+123456789" style="text-transform: none;">+39 338 5942 290</a></a>
+                </div>
+            </div>
+    </section>
+            <div class="box">
+                <h1>Quick links</h1> <!--Un titolo di primo livello che indica che questa sezione contiene link veloci.-->
+                <div class="icons">
+                    <a href="#">home</a>
+                    <a href="#">about</a>
+                    <a href="#">servizi</a>
+                    <a href="#">contatti</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="credit">creato da <span>Rita Avone e Maria Broccoli</span> </div> <!--Mostra i crediti del creatore del sito web.-->
+
+    </section>
+
+    <!-- sezione footer finita  -->
+
+    <!--In sintesi, questi link consentono di incorporare la libreria Swiper per la gestione di slider e carousels dinamici, 
+        oltre a includere script JavaScript personalizzato per aggiungere funzionalità specifiche al tuo sito web.-->
+
+
+    <!-- swiper JS cdn link  -->
+    <!--Questo script importa la libreria JavaScript Swiper dal Content Delivery Network (CDN). Swiper è una libreria che fornisce funzionalità per la creazione di slider e carousels interattivi. 
+        L'URL specificato è la versione minificata del pacchetto Swiper.-->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS file link  -->
+    <!--Questo script importa un file JavaScript personalizzato chiamato "script.js" dal tuo progetto. In questo file potresti avere del codice JavaScript personalizzato che aggiunge funzionalità specifiche al tuo sito web. 
+        Questo è un modo comune per separare il codice JavaScript personalizzato dal codice HTML principale, facilitando la manutenzione e la gestione del codice.-->
+    <script src="script.js"></script>
+
+    
+</body>
+
+</html>
